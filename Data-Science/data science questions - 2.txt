@@ -1,0 +1,83 @@
+1) 
+https://stackoverflow.com/questions/448023/what-is-the-difference-between-left-right-outer-and-inner-joins
+
+Simple Example: Lets say you have a Students table, and a Lockers table. In SQL, the first table you specify in a join, Students, is the LEFT table, and the second one, Lockers, is the RIGHT table.
+Each student can be assigned to a locker, so there is a LockerNumber column in the Student table. More than one student could potentially be in a single locker, but especially at the beginning of the school year, you may have some incoming students without lockers and some lockers that have no students assigned.
+For the sake of this example, lets say you have 100 students, 70 of which have lockers. You have a total of 50 lockers, 40 of which have at least 1 student and 10 lockers have no student.
+INNER JOIN is equivalent to "show me all students with lockers".
+Any students without lockers, or any lockers without students are missing.
+Returns 70 rows
+LEFT OUTER JOIN would be "show me all students, with their corresponding locker if they have one". 
+This might be a general student list, or could be used to identify students with no locker. 
+Returns 100 rows
+RIGHT OUTER JOIN would be "show me all lockers, and the students assigned to them if there are any". 
+This could be used to identify lockers that have no students assigned, or lockers that have too many students. 
+Returns 80 rows (list of 70 students in the 40 lockers, plus the 10 lockers with no student)
+FULL OUTER JOIN would be silly and probably not much use. 
+Something like "show me all students and all lockers, and match them up where you can" 
+Returns 110 rows (all 100 students, including those without lockers. Plus the 10 lockers with no student)
+CROSS JOIN is also fairly silly in this scenario.
+It doesn't use the linked lockernumber field in the students table, so you basically end up with a big giant list of every possible student-to-locker pairing, whether or not it actually exists.
+Returns 5000 rows (100 students x 50 lockers). Could be useful (with filtering) as a starting point to match up the new students with the empty lockers.
+
+2)
+https://www.calculator.net/probability-calculator.html
+
+3)
+calculate the variance of a random variable:
+
+A Random Variable is a set of possible values from a random experiment.
+Example: Tossing a coin: we could get Heads or Tails. 
+Let's give them the values Heads=0 and Tails=1 and we have a Random Variable "X"
+
+Variance: Var(X) 
+The Variance is:
+Var(X) = Σx2p − μ2
+To calculate the Variance:
+  -square each value and multiply by its probability
+  -sum them up and we get Σx2p
+  -then subtract the square of the Expected Value μ2
+
+4) Naive Bayes
+https://www.analyticsvidhya.com/blog/2017/09/naive-bayes-explained/
+
+5)
+https://www.analyticsvidhya.com/blog/2017/09/naive-bayes-explained/
+
+Answer = 7
+Explanation:
+Intuitively we would expect the sum of a single die to be the average of the possible outcomes, ie:
+S = (1+2+3+4+5+6)/6 =3.5
+And so we would predict the sum of a two die to be twice that of one die, 
+ie we would predict the expected value to be ==== 7
+
+6)
+https://www.chegg.com/homework-help/questions-and-answers/classifier-performs-well-training-data-poorly-production-s-likely-problem-1-high-variance--q44110901
+
+If a classifier performs well on training data but poorly in production, what's the most likely problem?
+1. High variance
+2. High bias
+3. High entropy
+4. High measurement noise
+Expert Answer 
+
+According to my knowledge ,The most likely reason for classifier which performs well on training data ,fails to perform in production is High Variance which causes over-fitting.
+
+7) GITHUB
+https://guides.github.com/introduction/flow/
+
+9)
+GROUP By  / OVER PARTITION BY
+
+https://stackoverflow.com/questions/2404565/sql-server-difference-between-partition-by-and-group-by
+
+10)
+feature scaling
+https://queirozf.com/entries/feature-scaling-quick-introduction-and-examples-using-scikit-learn
+
+
+
+
+
+
+
