@@ -1,0 +1,55 @@
+https://spark.apache.org/docs/latest/api/python/pyspark.html
+
+https://www.dezyre.com/apache-spark-tutorial/pyspark-tutorial
+
+Transformation and Actions in Apache Spark
+Spark Transformations 
+map()
+flatMap()
+filter()
+sample()
+union()
+intersection()
+distinct()
+join()
+
+Spark Actions
+reduce()             
+collect()               
+count()
+first()    
+takeSample(withReplacement, num, [seed])   
+
+Transformations in Spark 
+========================
+map() - applies changes on each line of the RDD and returns the transformed RDD as iterable of iterables i.e. each line is equivalent to a iterable and the entire RDD is itself a list
+
+flatMap() - apply changes to each line same as map but the return is not a iterable of iterables but it is only an iterable holding entire RDD contents.
+
+Filter() - used to reduce the old RDD based on some condition.
+
+Sample (withReplacement, fraction, seed) - used to pick sample RDD from a larger RDD. It is frequently used in Machine learning operations where a sample of the dataset needs to be taken. The fraction means percentage of the total data you want to take the sample from.
+
+Union() - used to merge two RDDs together if they have the same structure.
+
+Join() - joins two RDDs based on a common key.
+
+intersection() - gives you the common terms or objects from the two RDDS.
+
+distinct() - get rid of any ambiguities. As the name suggest it picks out the lines from the RDD that are unique.
+
+
+RDD Partitions
+--------------
+Parallelism is the key feature of any distributed system where operations are done by dividing the data into multiple parallel partitions. The same operation is performed on the partitions simultaneously which helps achieve fast data processing with spark. Map and Reduce operations can be effectively applied in parallel in apache spark by dividing the data into multiple partitions. A copy of each partition within an RDD is distributed across several workers running on different nodes of a cluster so that in case of failure of a single worker the RDD still remains available.
+Degree of parallelism of each operation on RDD depends on the fixed number of partitions that an RDD has. We can specify the degree of parallelism or the number of partitions when creating it or later on using the repartition () and coalesce() methods.
+
+coalesce ()  is an optimized version of repartition() method that avoids data movement and is generally used to decrease the number of partitions after filtering a large dataset.
+You can check the current number of partitions an RDD has by using the following methods- rdd.getNumPartitions()
+
+
+
+
+
+
+
